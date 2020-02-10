@@ -1,13 +1,15 @@
 import React from 'react';
 import { withFormik } from 'formik';
 import { string, object, ref } from 'yup';
+import { Link } from 'react-router-dom';
 
 import Card from '../../layouts/Card';
 import { Input } from '../../components/EspressoFormElements';
-import { postAdminApi } from '../../services/user';
 import Auth from '../../util/Auth';
 import history from '../../routes/history';
 import { ToastError } from '../../components/Toast';
+import { postUserApi } from '../../services/user';
+import './Register.css';
 
 const Register = props => {
   const { values, touched, errors, handleSubmit, handleChange, handleBlur, isSubmitting } = props;
@@ -50,6 +52,9 @@ const Register = props => {
         <button type="submit" disabled={isSubmitting}>
           Submit
         </button>
+        <Link to="/">
+          <button className="float-right">Return to login</button>
+        </Link>
         {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
       </form>
     </Card>
@@ -74,14 +79,13 @@ const MyEnhancedForm = withFormik({
 
   handleSubmit: async (values, { setSubmitting }) => {
     try {
-      const result = await postAdminApi(values);
+      const result = await postUserApi(values);
       if (result.status === 201) {
         Auth.authenticateUser(result.data.token);
         history.push('/chat');
       }
     } catch (error) {
       ToastError(error.response.data.error);
-    } finally {
       setSubmitting(false);
     }
   },
