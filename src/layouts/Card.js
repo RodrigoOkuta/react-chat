@@ -4,9 +4,9 @@ import './Card.css';
 
 const Card = ({ children, headerText }) => {
   return (
-    <div className="ui raised very padded text container segment">
+    <div>
       <h2 className="ui header text-center">{headerText}</h2>
-      {children}
+      <div className="ui raised very padded text container segment">{children}</div>
     </div>
   );
 };
