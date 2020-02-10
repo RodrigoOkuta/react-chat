@@ -16,7 +16,7 @@ const Register = props => {
 
   return (
     <Card headerText="Mintbean Chatroom Register">
-      <form onSubmit={handleSubmit}>
+      <form className="ui form" onSubmit={handleSubmit}>
         <Input
           type="text"
           name="userName"
@@ -26,6 +26,7 @@ const Register = props => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           values={values.userName}
+          icon="user icon"
         />
 
         <Input
@@ -37,6 +38,7 @@ const Register = props => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           values={values.password}
+          icon="lock icon"
         />
 
         <Input
@@ -48,8 +50,9 @@ const Register = props => {
           handleChange={handleChange}
           handleBlur={handleBlur}
           values={values.confirmPassword}
+          icon="lock icon"
         />
-        <button type="submit" disabled={isSubmitting}>
+        <button className="ui blue submit button" type="submit" disabled={isSubmitting}>
           Submit
         </button>
         <Link to="/">

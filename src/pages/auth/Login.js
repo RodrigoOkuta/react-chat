@@ -16,9 +16,9 @@ const Login = props => {
 
   return (
     <Card headerText="Mintbean Chatroom Login">
-      <div className="ui two column doubling stackable grid container">
-        <div className="column divider-right">
-          <form onSubmit={handleSubmit}>
+      <div className="ui two column very relaxed stackable grid container">
+        <div className="column">
+          <form className="ui form" onSubmit={handleSubmit}>
             <Input
               type="text"
               name="userName"
@@ -28,6 +28,7 @@ const Login = props => {
               handleChange={handleChange}
               handleBlur={handleBlur}
               values={values.userName}
+              icon="user icon"
             />
 
             <Input
@@ -39,17 +40,24 @@ const Login = props => {
               handleChange={handleChange}
               handleBlur={handleBlur}
               values={values.password}
+              icon="lock icon"
             />
-            <button type="submit">Submit</button>
+            <button className="ui blue submit button" type="submit">
+              Submit
+            </button>
             {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
           </form>
         </div>
         <div className="column center-element">
           <Link to="/Register">
-            <button>Register Account</button>
+            <button>
+              <i className="signup icon"></i>
+              Sign Up
+            </button>
           </Link>
         </div>
       </div>
+      <div className="ui vertical divider">Or</div>
     </Card>
   );
 };

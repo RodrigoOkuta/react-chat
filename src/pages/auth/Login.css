@@ -4,10 +4,6 @@
     text-align: center;
 }
 
-.divider-right {
-    border-right: solid 1px lightgray;
-}
-
 .center-container .ui.grid {
     margin-top: 0rem;
 }
