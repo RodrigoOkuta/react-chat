@@ -1,0 +1,12 @@
+.error-message {
+    color: red;
+}
+
+.display-block {
+    display: block;
+    margin: 10px 0px;
+}
+
+.input-element {
+    width: 100%;
+}
