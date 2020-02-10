@@ -20,7 +20,7 @@ export default class Auth {
   /**
    * Deauthenticate an user. Remove a token from Session Storage.
    */
-  static deauthenticateUser() {
+  static deAuthenticateUser() {
     sessionStorage.removeItem('token');
   }
 
