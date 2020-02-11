@@ -6,7 +6,7 @@ import './Chat.css';
 import Auth from '../util/Auth';
 import history from '../routes/history';
 
-const Chat = ({ text, name, children }) => {
+const ChatLayout = ({ text, name, children }) => {
   const onHandleLogout = () => {
     Auth.deAuthenticateUser();
     history.push('/');
@@ -34,4 +34,4 @@ const Chat = ({ text, name, children }) => {
   );
 };
 
-export default Chat;
+export default ChatLayout;

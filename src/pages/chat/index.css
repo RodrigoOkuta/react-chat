@@ -1,0 +1,4 @@
+.ui.comments {
+	overflow: overlay;
+	max-height: 50vh;
+}

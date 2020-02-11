@@ -10,6 +10,13 @@ const instance = axios.create({
   },
 });
 
+instance.interceptors.request.use(function(config) {
+  const token = Auth.getToken();
+  config.headers.Authorization = token;
+
+  return config;
+});
+
 instance.defaults.headers.common['Authorization'] = Auth.getToken();
 
 export default instance;
