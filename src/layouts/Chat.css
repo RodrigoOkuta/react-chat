@@ -1,3 +1,7 @@
 .full-screen {
 	max-height: 70vh;
 }
+
+.user-greeting {
+	margin: auto !important;
+}

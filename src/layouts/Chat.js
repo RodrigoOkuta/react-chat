@@ -6,7 +6,7 @@ import './Chat.css';
 import Auth from '../util/Auth';
 import history from '../routes/history';
 
-const Chat = ({ text, children }) => {
+const Chat = ({ text, name, children }) => {
   const onHandleLogout = () => {
     Auth.deAuthenticateUser();
     history.push('/');
@@ -20,6 +20,7 @@ const Chat = ({ text, children }) => {
             <h1>{text}</h1>
             <div className="right item no-border">
               <div className="ui input no-border">
+                <h3 className="user-greeting">Hello, {name}</h3>
                 <a className="item no-border" onClick={onHandleLogout}>
                   <i className="power off icon"></i> Logout
                 </a>

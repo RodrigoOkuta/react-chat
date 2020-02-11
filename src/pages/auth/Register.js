@@ -85,7 +85,7 @@ const MyEnhancedForm = withFormik({
       const result = await postUserApi(values);
       if (result.status === 201) {
         Auth.authenticateUser(result.data.token);
-        history.push('/chat');
+        history.push({ pathname: '/chat', state: { user: result.data.user } });
       }
     } catch (error) {
       ToastError(error.response.data.error);
